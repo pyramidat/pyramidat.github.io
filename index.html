@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0034)https://mannequin-depth.github.io/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+  @import url(//fonts.googleapis.com/css?family=Google+Sans);
+  h1 { font-family: 'Google Sans', Arial, sans-serif; }
+</style>
+
+<title>
+Pyramid Adversarial Training Improves ViT Performance
+</title>
+<link href="./PyramidAT_files/style.css" rel="stylesheet" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./PyramidAT_files/analytics.js"></script><script async="" src="./PyramidAT_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65563403-3');
+</script>   
+</head>
+<body>
+<div class="container">
+  <p>&nbsp;</p>
+  <p><span class="title">Pyramid Adversarial Training Improves ViT Performance</span>  </p>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en">Charles Herrmann*</a></td>
+      <td><a href="https://kylesargent.github.io/">Kyle Sargent*</a></td>
+      <td><a href="http://www.lujiang.info/">Lu Jiang</a></td>
+      <td><a href="https://www.cs.cornell.edu/~rdz/">Ramin Zabih</a></td>
+    </tr>
+  </tbody></table>
+  <table border="0" align="center" class="authors">
+    <tbody><tr align="center">
+      <td><a href="https://scholar.google.com/citations?user=eZQNcvcAAAAJ&hl=en"> Huiwen Chang</a></td>   
+      <td><a href="http://people.csail.mit.edu/celiu/">Ce Liu </a></td>
+      <td><a href="https://dilipkay.wordpress.com/">Dilip Krishan</a></td>
+      <td><a href="https://deqings.github.io/">Deqing Sun</a></td>
+    </tr>
+  </tbody></table>  
+  <table border="0" align="center" class="affiliations">
+    <tbody><tr>
+      <td align="center"><img src="./PyramidAT_files/GoogleAI_logo.png" width="50" height="48" alt=""></td>
+      <td align="left"><a href="https://research.google.com/">Google Research</a></td>
+    </tr>
+  </tbody></table>
+
+  <table width="999" border="0">
+    <tbody>
+      <tr>
+        <td align="center">| <a href="https://pyramidat.github.io/#paper">Paper</a> |
+         <a href="https://pyramidat.github.io/#code">Code (coming soon)</a> |
+       </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<table width="200" border="0" align="center">
+    <tbody><tr>
+      <td><img src="./PyramidAT_files/fig1.png" width="500" alt=""></td>
+      <td><img src="./PyramidAT_files/fig1_thumbnail_table.png" width="500" alt=""></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="caption">
+      <p>
+         Left: <b>Visual example of a pyramid adversarial image</b>.  We show the original image, multiple scales of a perturbation pyramid, and the perturbed image. The perturbation is adversarially learned for different scales and with different weights for each scale.  Right: <b> Examples of evaluation datasets and our gains </b>. We show thumbnails of in-distribution and out-of-distribution datasets, and the gains from applying our technique on each dataset. (Note that lower is better for ImageNet-C.)
+    </p>
+    </td>
+    </tr>
+  </tbody></table>
+<!--   <table width="998" border="0">
+    <tbody>
+      <tr>
+        <td width="292" align="right"><img src="./PyramidAT_files/new.gif" width="65" height="35" alt=""></td>
+        <td width="403"><span class="venue">PyramidAT_dataset<a href=" "> is now available</a>!</span></td>
+        <td width="289"><img src="./PyramidAT_files/new.gif" width="65" height="35" alt=""></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p><span class="section">Abstract</span> </p>
+  <p>
+Aggressive data augmentation is a key component of the strong generalization capabilities of Vision Transformer (ViT). One such data augmentation technique is adversarial training (AT); however, many prior works have shown that this often results in poor clean accuracy. In this work, we present pyramid adversarial training (PyramidAT), a simple and effective technique to improve ViT’s overall performance. We pair it with a “matched” Dropout and stochastic depth regularization, which adopts the same Dropout and stochastic depth configuration for the cleanand adversarial samples. Similar to the improvements on CNNs by AdvProp (not directly applicable to ViT), our pyramid adversarial training breaks the trade-off between in-distribution accuracy and out-of-distribution robustness for ViT and related architectures. It leads to 1.82% absolute improvement on ImageNet clean accuracy for the ViT-B model when trained only on ImageNet-1K data, while simultaneously boosting performance on 7 ImageNet robustness metrics, by absolute numbers ranging from 1.76% to 15.68%. We set a new state-of-the-art for ImageNet-C (41.42 mCE), ImageNet-R (53.92%), and ImageNet-Sketch (41.04%) without extra data, using only the ViT-B/16 backbone and our pyramid adversarial training. Our code will be publicly available.
+  <br>
+  </p>
+  <p class="section">&nbsp;</p>
+
+<!--   <table width="200" border="0" align="center">
+    <tbody>
+      <tr>
+        <td><iframe src="./PyramidAT_files/fj_fK74y5_0.html" width="853" height="480" frameborder="0" id="video" aligh="center" allowfullscreen=""></iframe></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <p class="section" id="paper">Papers</p>
+  <table width="940" border="0">
+    <tbody>
+      <tr>
+        <td width="175" height="100" align="left"><a href=" "><img src="./PyramidAT_files/Artboard 1@0.75x.png" alt="" width="140" height="167"></a></td>
+        <td width="5" rowspan="2">&nbsp;</td>
+        <td width="645"><p>"Pyramid Adversarial Training Improves ViT Performance"<br>
+            Charles Herrmann*, Kyle Sargent*, Lu Jiang, Ramin Zabih, Huiwen Chang, Ce Liu, Dilip Krishnan, and Deqing Sun<br>
+            <strong>Oral presentation </strong></p>
+          <p><em>CVPR 2022<br>
+            <br>
+        </em>[<a href=" ">Arxiv</a>][CVF] 
+        <br>
+        <br>
+        Corresponding author: irwinherrmann at google dot com        
+        <br>
+        </p>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <p class="section">&nbsp;</p> -->
+
+
+  <p class="section", id="code">Code</p>
+  <table width="587" height="136" border="0">
+    <tbody>
+      <tr>
+        <td width="175"><img src="./PyramidAT_files/github.png" alt="" width="175" height="205"></td>
+        <td width="388" align="left"><ul>
+          <a >Coming soon</a>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="section", id="data">Bibtex</p>
+  <pre>
+  @inproceedings{herrmann2022pyramid,
+    title={Pyramid Adversarial Training Improves ViT Performance},
+    author={Herrmann, Charles and Sargent, Kyle and Jiang, Lu and Zabih, Ramin and Chang, Huiwen and Liu, Ce and Krishnan, Dilip and Sun, Deqing},
+      booktitle={CVPR},
+    year={2022}
+  }
+
+  </pre>
+  </table>  
+
+
+
+</body></html>
